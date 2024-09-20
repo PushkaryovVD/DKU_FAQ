@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Часто задаваемые вопросы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .category {
+            margin-bottom: 20px;
+        }
+        .question {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .answer {
+            margin-left: 20px;
+        }
+        .search-box {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .no-results {
+            display: none;
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="DKU Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Общие</a></li>
+                <li><a href="#">Univer</a></li>
+                <li><a href="#">Yandex Почта</a></li>
+                <li><a href="#">Moodle</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Часто задаваемые вопросы</h1>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Поиск вопросов..." onkeyup="searchFAQs()">
+    </div>
+
+    <div id="faqContainer">
+        <div class="category" id="general">
+            <h2>Общие</h2>
+            <div class="faq-item">
+                <div class="question">Какой основной сайт университета?</div>
+                <div class="answer">Основной сайт университета находится по адресу <a href="https://www.dku.kz">dku.kz</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Где я могу найти информацию о расписании занятий?</div>
+                <div class="answer">Информацию о расписании занятий можно найти на образовательном портале <a href="https://timetable.dku.kz/">timetable.dku.kz/</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Как связаться с администрацией университета?</div>
+                <div class="answer">Контактные данные администрации университета доступны на сайте <a href="https://dku.kz/ru/kontakty">dku.kz</a> в разделе "Контакты".</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Какие языки обучения в университете?</div>
+                <div class="answer">В университете обучение ведется на казахском, русском, английском и немецком языках.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Где найти информацию о поступлении и специальностях?</div>
+                <div class="answer">Информация о поступлении и доступных специальностях находится на сайте <a href="https://www.dku.kz">dku.kz</a> в разделе "Поступающим".</div>
+            </div>
+        </div>
+    
+        <div class="category" id="univer">
+            <h2>Образовательный портал (Univer)</h2>
+            <div class="faq-item">
+                <div class="question">Как восстановить пароль для доступа к univer?</div>
+                <div class="answer">Для восстановления пароля на образовательный портал воспользуйтесь функцией восстановления пароля на странице <a href="https://univer.dku.kz/user/forgotpassword">univer.dku.kz</a> или обратитесь в службу поддержки университета по адресу <a href="mailto:digital@dku.kz">digital@dku.kz</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Связан ли логин и пароль от univer и Moodle?</div>
+                <div class="answer">Нет, логины и пароли для <a href="https://univer.dku.kz">univer.dku.kz</a> и <a href="https://moodle.dku.kz">moodle.dku.kz</a> не связаны между собой. Необходимо использовать разные логины и пароли для каждого из этих порталов.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Как изменить личные данные на образовательном портале?</div>
+                <div class="answer">Для изменения личных данных обратитесь в деканат или к администратору портала <a href="https://univer.dku.kz">univer.dku.kz</a>.</div>
+            </div>
+        </div>
+    
+        <div class="category" id="email">
+            <h2>Почта</h2>
+            <div class="faq-item">
+                <div class="question">Как получить университетскую электронную почту?</div>
+                <div class="answer">Университет предоставляет электронные адреса <a href="https://mail.yandex.kz/"> Yandex Почты </a> всем студентам в начале года на их почты которые были указаны в документах для приемной комиссии. </div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Почему не отправляются или не вы не можете получить письма?</div>
+                <div class="answer">Рекомендуем первый вход произвести с персонального компьютера чтобы завершить регистрацию вашего аккаунта почты. </div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Неверная фамилия или имя?</div>
+                <div class="answer">Если в вашей фамилии или имени вы видите опечатку то напишите на почту c правильным написанием вашего фиг  <a href="mailto:oit@dku.kz"> IT-службой</a></div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Как восстановить доступ к университетской электронной почте?</div>
+                <div class="answer">Для восстановления доступа к университетской почте свяжитесь с <a href="mailto:oit@dku.kz"> IT-службой</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Какие форматы университетских адресов электронной почты?</div>
+                <div class="answer">Обычно университетские адреса электронной почты имеют формат: student.фамилия@dku.kz изначально . Пароль изначально Qwerty*11. После первого входа обязательно поменяйте пароль.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Можно ли привязать университетскую почту к личным почтам?</div>
+                <div class="answer">Да, университетскую почту можно настроить на личных почтах с помощью IMAP/SMTP данных, которые можно найти на сайте почты</div>
+            </div>
+        </div>
+    
+        <div class="category" id="moodle">
+            <h2>Moodle</h2>
+            <div class="faq-item">
+                <div class="question">Что такое Moodle?</div>
+                <div class="answer">Moodle — это система управления обучением, доступная по адресу <a href="https://moodle.dku.kz">moodle.dku.kz</a>, где студенты могут проходить онлайн-курсы, сдавать задания и взаимодействовать с преподавателями.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Как получить логин и пароль в Moodle?</div>
+                <div class="answer">Ваши логины и пароли были отправлены на ваши корпоративные почты. Если возникнут вопросы вы можете написать на почту <a href="mailto:digital@dku.kz"> IT-службы</a>.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Что делать, если я забыл(а) пароль от Moodle?</div>
+                <div class="answer">Для восстановления пароля воспользуйтесь функцией восстановления на сайте <a href="https://moodle.dku.kz">moodle.dku.kz</a> или обратитесь в службу поддержки digital@dku.kz.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">Могу ли я использовать один и тот же логин для Moodle и Univer?</div>
+                <div class="answer">Нет, система Moodle и портал Univer работают независимо друг от друга. Для каждой системы требуется отдельная учетная запись и пароль.</div>
+            </div>
+            <div class="faq-item">
+                <div class="question">У меня нету курсов в Moodle?</div>
+                <div class="answer">Чтобы отобразились у вас курсы попросите преподователя добавить вас или вашу группу на необходимые дисциплины.</div>
+            </div>
+        </div>
+    </div>
+
+    <p class="no-results" id="noResults">Ничего не найдено</p>
+
+    <script>
+        function searchFAQs() {
+            const input = document.getElementById('searchInput').value.toLowerCase().trim();
+            const faqItems = document.querySelectorAll('.faq-item');
+            const categories = document.querySelectorAll('.category');
+            let hasResults = false;
+
+            // Скрываем все категории и элементы перед поиском
+            categories.forEach(category => {
+                category.style.display = 'none';
+            });
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.question').textContent.toLowerCase();
+                const answer = item.querySelector('.answer').textContent.toLowerCase();
+
+                // Сравниваем строку поиска с вопросом и ответом
+                if (question.includes(input) || answer.includes(input)) {
+                    item.style.display = 'block';
+                    item.closest('.category').style.display = 'block'; // Показываем категорию, если есть совпадение
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Если ничего не найдено
+            document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>
