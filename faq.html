@@ -31,6 +31,13 @@
             text-align: center;
             color: red;
         }
+        label {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+        }
     </style>
 </head>
 <body>
@@ -146,12 +153,41 @@
                 <div class="question">У меня нету курсов в Moodle?</div>
                 <div class="answer">Чтобы отобразились у вас курсы попросите преподователя добавить вас или вашу группу на необходимые дисциплины.</div>
             </div>
+            <div class="faq-item">
+                <div class="question">Не подходит\не помню пароль?</div>
+                <div class="answer">Введите вашу фамилию в поле ниже.</div>
+                <input type="lastname" id="lastname" required>
+                <button onclick="searchLastname()">Найти</button>
+                <div id="result">
+                        <p id="lastname-result"></p>
+                        <p id="email-result"></p>
+                        <p id="moodle-login-result"></p>
+                        <p id="moodle-password-result"></p>
+                </div>
+            </div>
         </div>
     </div>
 
     <p class="no-results" id="noResults">Ничего не найдено</p>
 
     <script>
+
+        const jsonData = [
+    {
+        "email": "student.ivanov@dku.kz",
+        "lastname": "Иванов",
+        "moodleLogin": "ivanov.ivan",
+        "moodlePassword": "ivanov.ivan@2025"
+    },
+    {
+        "lastname": "Пушкарев",
+        "email": "student.pushkaryov@dku.kz",
+        "moodleLogin": "pushkaryov.vadim",
+        "moodlePassword": "pushkaryov.vadim@2025"
+    }
+];
+
+
         function searchFAQs() {
             const input = document.getElementById('searchInput').value.toLowerCase().trim();
             const faqItems = document.querySelectorAll('.faq-item');
@@ -179,6 +215,28 @@
 
             // Если ничего не найдено
             document.getElementById('noResults').style.display = hasResults ? 'none' : 'block';
+        }
+        function searchLastname() {
+            const LastnameInput = document.getElementById('lastname').value;
+    const resultDiv = document.getElementById('result');
+
+    // Clear previous results
+    document.getElementById('lastname-result').textContent = '';
+    document.getElementById('email-result').textContent = '';
+    document.getElementById('moodle-login-result').textContent = '';
+    document.getElementById('moodle-password-result').textContent = '';
+
+    // Search for the email in the JSON data
+    const result = jsonData.find(item => item.lastname === LastnameInput);
+
+    if (result) {
+        document.getElementById('lastname-result').textContent = `Фамилия: ${result.lastname}`;
+        document.getElementById('email-result').textContent = `Корпоративная почта: ${result.email}`;
+        document.getElementById('moodle-login-result').textContent = `Логин Moodle: ${result.moodleLogin}`;
+        document.getElementById('moodle-password-result').textContent = `Пароль Moodle: ${result.moodlePassword}`;
+    } else {
+        resultDiv.innerHTML = '<p>Студент не найден.</p>';
+    }
         }
     </script>
 
